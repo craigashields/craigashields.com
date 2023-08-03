@@ -1,0 +1,61 @@
+---
+import DefaultLayout from '../components/LayoutDefault.astro';
+import Socials from '../components/Socials.astro';
+---
+
+<DefaultLayout documentTitle="Contact" documentDescription="If you have a question or just want to say hi, I’ll get back to you as soon as I can!">
+  <div class="container">
+    <h1 class="main-heading text-swipe-animation">Contact me</h1>
+    <p>If you have a question or just want to say hi, I’ll get back to you as soon as I can!<br class="main-heading-break" /> You can find me on social media, or please email me. I'll put a contact form together soon.</p>
+
+    <div class="top-row">
+      <section class="social-section">
+        <Socials />
+      </section>
+
+
+    </div>
+  </div>
+</DefaultLayout>
+
+<style lang="scss">
+  .top-row {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    section {
+      flex: 1;
+    }
+  }
+
+  .social-section {
+    margin-top: 15px;
+  }
+
+
+  @media screen and (max-width: 980px) {
+    .main-heading-break {
+      display: none;
+    }
+
+    .top-row {
+      gap: 2rem;
+      flex-direction: column;
+    }
+
+
+    .socials {
+      li {
+        a {
+          font-size: var(--font-size-lg);
+          font-weight: normal;
+          svg {
+            width: 25px !important;
+            height: 25px !important;
+          }
+        }
+      }
+    }
+  }
+</style>

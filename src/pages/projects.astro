@@ -1,0 +1,188 @@
+---
+import DefaultLayout from '../components/LayoutDefault.astro';
+import PortfolioItem from '../components/PortfolioItem.astro';
+
+---
+
+<DefaultLayout documentTitle="Projects" documentDescription="Welcome to my portfolio, showcasing a selection of projects I've worked on.">
+  <div class="container">
+    <h1 class="main-heading text-swipe-animation">Projects</h1>
+    <div class="intro">
+      <p>Welcome to my portfolio. In my spare time I like working on side projects and learning about different technologies. Here are a few I've worked on recently. </p>
+    </div>
+
+    <section class="projects">
+      <PortfolioItem
+        sourceCode="https://github.com/craigashields/acp-recommends"
+        projectLink="https://acp-recommends.vercel.app/"
+        projectYear="2023"
+        title="Awesome Comics Podcast Recommendations"
+        image="/images/acp-recommends-portfolio.png"
+        tags={[
+          "TypeScript",
+          "Tailwind CSS",
+          "HTML",
+          "CSS",
+          "Next.js",
+          "Supabase",
+          "Vercel"
+        ]}>
+        <p slot="subtitle">Comic recommendations from the hosts and guests of the Awesome Comics Podcast</p>
+
+        <div slot="description">
+          <p>As an ardent lover of comics, I wanted to contribute to the vibrant ACP community. That's why I decided to establish this website, where I can share my enthusiasm for the Awesome Comics Podcast. I always forget about the great books the team recommend and thought this would serve as a great reminder.</p>
+          <p>The project is simple, utilizing Next JS image optimisation and Supabase as a database.</p>
+          <p>I started my Typescript learning journey with this project and learned a lot of other things on the way to deployment.</p>
+        </div>
+      </PortfolioItem>
+
+      <PortfolioItem
+        projectYear="2023"
+        title="Beyblades API"
+        image="/images/beyblade-api-portfolio.png"
+        projectLink="https://rapidapi.com/craigashields/api/beyblade-api1/"
+        sourceCode="https://github.com/craigashields/beyblades-api"
+        tags={[
+          "TypeScript",
+          "PlanetScale",
+          "Prisma",
+          "HTML",
+          "CSS",
+          "Tailwind CSS",
+          "Next.js",
+          "Vercel",
+          "RapidAPI"
+        ]}>
+        <p slot="subtitle">A Beyblade API, providing access to information about various Beyblades, their product information, parts and other related data.</p>
+
+        <div slot="description">
+          <p>Built using Next.js, this project came from my want to build and host an API. At the time my son was obsessed with Beyblades so I decided to use it as my inspiration.</p>
+          <p>I learned the fundamentals of Next.js API creation from this project along with how to host APIs with RapidAPI. I have a number of enhancements I want to make, including enhanced error handling, reduced complexity from the database seed script. Along with moving the API docs to Redoc</p>
+        </div>
+      </PortfolioItem>
+
+      <PortfolioItem
+      projectYear="2023"
+        sourceCode="https://github.com/craigashields/curbishleys-roses"
+        projectLink='https://craigashields.github.io/curbishleys-roses/'
+        title="Curbishleys Roses"
+        image="/images/curbishleys-roses-portfolio.png"
+        tags={[
+          "TypeScript",
+          "Tailwind CSS",
+          "HTML",
+          "CSS",
+          "Next.js",
+          "GitHub"
+        ]}>
+        <p slot="subtitle">Family owned and run for over 90 years in the heart of cheshire, stocking a great range of plants at pocket friendly prices.</p>
+
+        <div slot="description">
+          <p>This quick and simple project came from a friend who had issues with his current hosting provider. All that was needed was a simple 1 page site with contact information. </p>
+          <p>There has been issues with transferring the domain from the current provider so this site is currently hosted with Github pages and redirects from the main domain. We'll be transferring the domain out as soon as the issues have been resolved.</p>
+        </div>
+      </PortfolioItem>
+
+      <PortfolioItem
+        projectYear="2023"
+        title="Calculate Schedule Pricing API"
+        image="/images/calculate-price-portfolio.png"
+        projectLink="https://calculate-schedule-price-api.vercel.app/"
+        sourceCode="https://github.com/craigashields/calculate-schedule-price-api/"
+        tags={[
+          "TypeScript",
+          "HTML",
+          "CSS",
+          "Next.js",
+          "Vercel",
+          "Redoc",
+          "Zod",
+          "Upstash"
+        ]}>
+        <p slot="subtitle">An API to calculate total price based on unit price and the number of issues published between 2 dates.</p>
+
+        <div slot="description">
+          <p>This API is primarily aimed at publishers to demonstrate how to calculate a user's subscription cost based on a unit price and the number of issues published between 2 dates (Subscription Start and Subscription Expiry).</p>
+          <p>The backend API, built using Next.js, uses Zod for Schema declaration and efficient validation of the REST API request. As this was made as an example, it has no authentication, but does use Upstash for rate limiting.</p>
+        </div>
+      </PortfolioItem>
+
+    <PortfolioItem
+      projectYear="2023"
+      title="Typescript NPM Starter Template"
+      image="/images/typescript-starter-portfolio.png"
+      sourceCode="https://github.com/craigashields/typescript-npm-library-starter"
+      tags={[
+        "TypeScript",
+        "GitHub",
+        "Vitest",
+        "Changesets"
+      ]}>
+      <p slot="subtitle">Create TypeScript npm packages using this example. Boilerplate code includes CI/CD and changelogs</p>
+
+      <div slot="description">
+        <p>This project was born from me wanting to create an NPM package. The package I'm creating provides a number of functions for calculating blood glucose and insulin values. My son was recently diagnosed with Type 1 diabetes and thought that this might help others.</p>
+        <p>As you can imagine, testing for such functions is extremely important so that package isn't quite ready yet, but I took what I had learned from various sources and created a template for anyone wanting to create a Typescript function library for NPM</p>
+        <p>The template includes TSUP for the build, Changesets for changelogging and Github Actions for CI/CD. For automated testing, I choose to use vitest</p>
+      </div>
+    </PortfolioItem>
+
+    <PortfolioItem
+      projectYear="2021"
+      title="Caira House Barbados"
+      image="/images/caira-house-portfolio.png"
+      projectLink="https://cairahousebarbados.com/"
+      tags={[
+        "JavaScript",
+        "WordPress",
+        "HTML",
+        "CSS",
+        "PHP"
+      ]}>
+      <p slot="subtitle">A Wordpress website for a Barbados property rental.</p>
+
+      <div slot="description">
+        <p>A Wordpress project mainly consisting of configuration and implementation rather than fullstack development.</p>
+        <p>A number of customisations to the Wordpress theme were made based on the client's request, resulting in changes to the Javascript, PHP, HTML and CSS.</p>
+        <p>As the data rarely changes on this site, I plan to move the Wordpress site to either Next.js or Gatesby to benefit from the speed that these static site generators can bring.</p>
+      </div>
+    </PortfolioItem>
+
+    <PortfolioItem
+      projectYear="2021"
+      title="Level Up Fitness Barbados"
+      image="/images/level-up-portfolio.png"
+      projectLink="https://levelupbarbados.com/"
+      tags={[
+        "JavaScript",
+        "WordPress",
+        "HTML",
+        "CSS",
+        "PHP"
+      ]}>
+      <p slot="subtitle">A Wordpress website for a Barbados Health and Fitness business.</p>
+
+      <div slot="description">
+        <p>A Wordpress project mainly consisting of configuration and implementation rather than fullstack development.</p>
+        <p>Integration into GymMaster membership platform was required for class bookings and payment.</p>
+      </div>
+    </PortfolioItem>
+
+    </section>
+  </div>
+</DefaultLayout>
+
+<style lang="scss">
+  .projects {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    row-gap: 2rem;
+  }
+
+  @media screen and (max-width: 980px) {
+    .projects {
+      margin-top: 1.5rem;
+    }
+  }
+</style>

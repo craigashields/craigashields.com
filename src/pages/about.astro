@@ -1,0 +1,206 @@
+---
+import DefaultLayout from '../components/LayoutDefault.astro';
+import TimelineItem from "../components/TimelineItem.astro";
+import DevLogo, { devIcons } from '../components/DevLogo.astro';
+
+---
+
+<DefaultLayout documentTitle="About" documentDescription="I'm Craig, a successful and adaptable Technical Product Manager dedicated to solving product problems with the right technology.">
+  <section class="container">
+    <h1 class="main-heading text-swipe-animation" id="greeting">
+      <!-- Value inserted via greeting.js -->
+    </h1>
+    <div class="intro">
+      <p>I'm Craig, a successful and adaptable Technical Product Manager with a passion for leveraging technology to conquer challenges and clear the path to success.</p>
+    </div>
+
+    <div class="main-section">
+      <img class="profile-photo" src="/images/profile-pic.png" alt="Craig Shields">
+      <div class="main-section-text">
+        <p>My expertise lies in bridging the gap between technical teams and business stakeholders, ensuring seamless collaboration and understanding between the two.</p>
+        <p>Driven by a passion for developer experience, I prioritize creating developer-friendly products and environments, streamlining workflows, and fostering a collaborative atmosphere that empowers technical teams to deliver their best work efficiently and effectively.</p>
+        <p>With a track record of successfully launching and managing complex projects, I possess strong analytical and problem-solving skills that allow me to anticipate potential issues and swiftly implement solutions to keep projects on track. I am equally comfortable leading cross-functional teams, driving product roadmaps, and engaging with stakeholders at all levels.</p>
+        <p>My dedication to continuous learning and keeping up-to-date with industry trends ensures that my approach remains innovative and adaptive to the ever-evolving technology landscape.</p>
+        <p>Overall, my goal is to be a driving force behind impactful products that not only address business needs but also enhance the lives of end-users and developers alike.</p>
+        <p>On a personal note, I have two wonderful boys, Dexter (11 years old) and Robin (2 years old) and in my free time, I enjoy reading graphic novels and gaming</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="marquee">
+    <div class="marquee-content">
+      {devIcons.map(devIcon => <DevLogo icon={devIcon.title} />)}
+    </div>
+
+    <!-- Logos duplicated for scrolling effect -->
+    <div aria-hidden="true" class="marquee-content">
+      {devIcons.map(devIcon => <DevLogo icon={devIcon.title} />)}
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="sub-heading">Experience</h2>
+
+    <div class="timeline-items">
+      <TimelineItem
+        isCurrent
+        company="Aptitude Software"
+        workLocation="Remote"
+        title="Technical Product Manager"
+        startDate="Sept 2022"
+        logo="/images/aptitude_logo.png"
+        responsibilities={[
+          "Identify, evaluate, and prioritize market needs, responsible for recognizing market requirements with a technical emphasis, assessing their significance, and establishing priorities.",
+          "Drive forward the importance of Developer Experience both for internal teams and client developers.",
+          "Drive a culture of continuous improvement, seeking feedback both internally and externally, and implementing process enhancements to optimize product development and delivery.",
+          "Educate stakeholders on API-Design-First strategy and plan implementation steps.",
+          "Make cost/benefit judgement decisions based on data analysis",
+          "Define roadmaps based on delivery plans to ensure a clear and structured path for product development.",
+          "Communicate with stakeholders, ensuring alignment, understanding, and transparency regarding product priorities, requirements, and progress",
+          "Product Ownership of technical components scrum team that underpin Aptitude Solutions.",
+          "Validation analysis to ensure product delivery is providing the intending value.",
+          "Attend and contribute to Data Protection and Security meetings",
+        ]}
+      />
+
+      <TimelineItem
+        company="Aptitude Subscription Management"
+        workLocation="Hybrid"
+        title="Principal Implementation Consultant"
+        startDate="Aug 2019"
+        endDate="Sept 2022"
+        logo="/images/aptitude_logo.png"
+        responsibilities={[
+          "Carry out Implementation Consultant duties for high profile clients and complex integrations.",
+          "Design and implement processes to reduce client on-boarding period.",
+          "Technical escalation point for all implementation projects.",
+          "Approval responsibility and technical oversight for all implementation solutions.",
+          "Continuously evaluate the client documentation hub in conjunction with Product Marketing to ensure that the documentation provides the level of detail required to support a client/partner through a seamless integration.",
+          "Assist wider implementation team on complex client requirements.",
+          "Assist development teams with queries of how the platform is used by clients in order for this to be accurately simulated in QA and automated testing.",
+          "Deep dive into platform functionality and recurring client/partner issues, working with Product Owners and Technical Resources to provide robust and future-proof solutions rather than one off fixes.",
+          "Use cloud architecture to develop ‘outside-the-box’ custom solutions in order to achieve client goals.",
+          "Assist in the pre-sales processes.",
+          "Devise and provide in-depth technical training to implementation and client support teams.",
+          "Develop pre-sales proof of concept integrations for new and existing functionality.",
+          "Twice awarded ‘Client First’ Employee of the Year."  
+  ]}
+      />
+
+      <TimelineItem
+        company="Aptitude Subscription Management"
+        workLocation="On-Site"
+        title="Implementation Consultant"
+        startDate="Nov 2017"
+        endDate="Aug 2019"
+        logo="/images/aptitude_logo.png"
+        responsibilities={[
+          "Undertake business analysis to define the scope of a project and the client’s system / business requirements including websites, backend, CRM, CEM, Payment, Financial and Reporting.",
+          "Responsible for the delivery of technical specifications using sequence diagrams to detail system integrations with the use of REST APIs.",
+          "Provide feedback and recommendations on client integrations based on industry knowledge.",
+          "Deliver on-site and remote training to clients.",
+          "Daily use of Postman application to create easy to understand API collections including automated tests and visualizations.",
+          "Configuration of the platform based on client requirements.",
+          "Supporting internal client support teams",
+          "Investigating platform (C#) bugs / gaps and provide fixes to the internal developers.",
+          "Work within agreed timeframes and budgets to ensure on-time delivery of projects",
+          "Plan and execute complex client data migrations."
+        ]}
+      />
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss">
+  .main-section {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    align-items: center;
+  }
+
+  .profile-photo {
+    width: 200px;
+    border-radius: 50%;
+  }
+
+  /* Marquee styles */
+  .marquee {
+    --gap: 1.5rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    margin: 3.5rem 0;
+    &:hover {
+      .marquee-content {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  .marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll 30s linear infinite reverse;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  /* Pause animation when reduced-motion is set */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-content {
+      animation-play-state: paused !important;
+    }
+  }
+
+  .sub-heading {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .timeline-items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0rem;
+  }
+
+
+  @media screen and (max-width: 980px) {
+    .main-section {
+      gap: 1rem;
+      display: block;
+      word-break: break-word;
+    }
+
+    .profile-photo {
+      float: left;
+      width: 152px;
+      margin: 10px;
+    }
+
+    :global(.devicon) {
+      width: 45px !important;
+      height: 45px !important;
+    }
+  }
+</style>
+
+<script>
+  import { greeting } from "../js/greeting";
+  const greetingContainer = document.getElementById("greeting");
+  if(greetingContainer){
+    greetingContainer.innerText = greeting();
+  }
+</script>

@@ -1,0 +1,72 @@
+---
+import type { Skills } from '../types';
+
+export const devIcons: { title: Skills, filePath: string }[] = [
+  { "title": "JavaScript", "filePath": "/images/dev-logos/javascript.svg" },
+  { "title": "TypeScript", "filePath": "/images/dev-logos/typescript.svg" },
+  { "title": "React", "filePath": "/images/dev-logos/react.svg" },
+  { "title": "Next.js", "filePath": "/images/dev-logos/nextjs.png" },
+  { "title": "Astro", "filePath": "/images/dev-logos/astro.png" },
+  { "title": "Node.js", "filePath": "/images/dev-logos/nodejs.svg" },
+  { "title": "HTML", "filePath": "/images/dev-logos/html.svg" },
+  { "title": "CSS", "filePath": "/images/dev-logos/css.svg" },
+  { "title": "Sass", "filePath": "/images/dev-logos/sass.svg" },
+  { "title": "Tailwind CSS", "filePath": "/images/dev-logos/tailwind.svg" },
+  { "title": "PostgreSQL", "filePath": "/images/dev-logos/postgresql.svg" },
+  { "title": "Redis", "filePath": "/images/dev-logos/redis.svg" },
+  { "title": "Docker", "filePath": "/images/dev-logos/docker.svg" },
+  { "title": "AWS", "filePath": "/images/dev-logos/aws.svg" },
+  { "title": "Git", "filePath": "/images/dev-logos/git.svg" },
+  { "title": "Figma", "filePath": "/images/dev-logos/figma.svg" },
+  { "title": "WordPress", "filePath": "/images/dev-logos/wordpress.svg" },
+  { "title": "Supabase", "filePath": "/images/dev-logos/supabase.svg" },
+  { "title": "Vercel", "filePath": "/images/dev-logos/vercel.svg" },
+  { "title": "PlanetScale", "filePath": "/images/dev-logos/planetscale.svg" },
+  { "title": "Prisma", "filePath": "/images/dev-logos/prisma.svg" },
+  { "title": "RapidAPI", "filePath": "/images/dev-logos/rapidapi.svg" },
+  { "title": "GitHub", "filePath": "/images/dev-logos/github.svg" },
+  { "title": "Redoc", "filePath": "/images/dev-logos/redoc.png" },
+  { "title": "Zod", "filePath": "/images/dev-logos/zod.svg" },
+  { "title": "Upstash", "filePath": "/images/dev-logos/upstash.svg" },
+  { "title": "Vitest", "filePath": "/images/dev-logos/vitest.png" },
+  { "title": "Changesets", "filePath": "/images/dev-logos/changesets.png" },
+  { "title": "PHP", "filePath": "/images/dev-logos/php.svg" },
+
+];
+
+interface Props {
+  icon: Skills;
+  size?: number;
+}
+
+const { icon, size = 60 } = Astro.props;
+
+const logo = devIcons.find(devIcon => devIcon.title === icon);
+
+if (!logo) {
+  throw new Error(`${icon} does not exist in devIcons`);
+}
+---
+
+<img
+  class="devicon"
+  src={logo.filePath}
+  alt={logo.title}
+  title={logo.title}
+  width={size + "px"}
+  height={size + "px"}
+/>
+
+<script>
+  import tippy, { createSingleton } from 'tippy.js';
+
+  const tippyInstances = tippy(".devicon", {
+    content: (reference: any) => reference.getAttribute("title"),
+  });
+
+  const singleton = createSingleton(tippyInstances, {
+    moveTransition: 'transform 0.2s ease-out',
+  });
+
+  singleton.enable();
+</script>
