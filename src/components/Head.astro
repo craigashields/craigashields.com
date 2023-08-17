@@ -11,6 +11,7 @@ import 'tippy.js/dist/tippy.css';
 import "../styles/fonts.css";
 import "../styles/vars.css";
 import "../styles/global.scss";
+import GoogleAnalytics from "./GoogleAnalytics.astro";
 
 const title = import.meta.env.PUBLIC_SITE_NAME;
 const defaultDesc = `A successful and adaptable Technical Professional dedicated to solving product problems with the right technology`;
@@ -26,6 +27,7 @@ const ogimage = Astro.props.ogimage || site_url + "images/ogimage.png";
 ---
 
 <head>
+  <GoogleAnalytics/>
   <meta charset="UTF-8">
   {canonical && <link rel="canonical" href={canonical}>}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
