@@ -39,3 +39,4 @@ export type Skills =
   | "Upstash"
   | "Changesets"
   | "Vitest"
+  | "EmailJs";

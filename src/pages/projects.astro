@@ -13,6 +13,28 @@ import PortfolioItem from '../components/PortfolioItem.astro';
 
     <section class="projects">
       <PortfolioItem
+      sourceCode="https://github.com/craigashields/personalised-awards"
+      projectLink="https://personalised-awards.vercel.app/"
+      projectYear="2024"
+      title="Personalised Awards"
+      image="/images/personalised-awards-portfolio.png"
+      tags={[
+        "TypeScript",
+        "Tailwind CSS",
+        "HTML",
+        "CSS",
+        "Next.js",
+        "Vercel",
+        "EmailJs"
+      ]}>
+      <p slot="subtitle">A starter website for a company providing sustainable trophies and awards</p>
+
+      <div slot="description">
+        <p>Built with NextJS, this basic starter website provides a landing page with an image gallery, testimonials and product features.</p>
+        <p>It also provides a contact page using EmailJs along with a full product page. Currently there is no online payment functionality. This is a phase two.</p>
+      </div>
+    </PortfolioItem>
+      <PortfolioItem
         sourceCode="https://github.com/craigashields/acp-recommends"
         projectLink="https://acp-recommends.vercel.app/"
         projectYear="2023"
